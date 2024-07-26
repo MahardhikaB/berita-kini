@@ -46,10 +46,8 @@ const Nav = () => {
                     <Link 
                         href={link.path} 
                         key={index} 
-                        className={`${ link.path === pathname && "text-[#0090FF]"
-                        } 
-                        capitalize font-medium text-[#828282] transition-all`
-                        }>
+                        className={`${link.path === pathname ? "text-[#0090FF]" : "text-[#828282]"} 
+                        capitalize font-medium transition-all`}>
                         {link.name}
                     </Link>
                 );
