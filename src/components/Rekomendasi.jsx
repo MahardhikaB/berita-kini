@@ -57,8 +57,8 @@ const Rekomendasi = () => {
             {/* Card */}
             <div className="grid grid-cols-4 justify-items-center gap-6">
                 {currentNews.map((news, index) => (
-                    <Link href={`/news?data=${encodeURIComponent(JSON.stringify(news))}`}>
-                        <div key={index} className="flex flex-col w-[276px] h-[358px]">
+                    <Link key={index} href={`/news?data=${encodeURIComponent(JSON.stringify(news))}`}>
+                        <div className="flex flex-col w-[276px] h-[358px]">
                             <img 
                                 src={news.thumbnail}
                                 className="w-[276px] h-[197px] rounded-md object-cover mb-[8px]"
