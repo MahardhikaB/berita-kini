@@ -1,6 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 const NewsPage = () => {
     const [linkedNews, setLinkedNews] = useState([]);
@@ -125,8 +126,8 @@ const NewsPage = () => {
                 </div>
                 <div className="flex flex-col justify-between my-[32px]">
                 {popularNews.map((news, index) => (
-                    <>
-                        <div className="flex flex-row w-[400px] h-[128px] px-[26px] my-[24px]">
+                    <React.Fragment key={index}>
+                        <div key={index} className="flex flex-row w-[400px] h-[128px] px-[26px] my-[24px]">
                         <img 
                             src={news.thumbnail}
                             className="w-[147px] h-[128px] rounded-md object-cover"
@@ -141,9 +142,9 @@ const NewsPage = () => {
                         </div>
                     </div>
                         {index !== linkedNews.length - 1 && (
-                            <div className="h-[2px] w-[419px] bg-[#E0E0E0]"></div>
+                            <div key={`divider-${index}`} className="h-[2px] w-[419px] bg-[#E0E0E0]"></div>
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
                 </div>
         </div>    
