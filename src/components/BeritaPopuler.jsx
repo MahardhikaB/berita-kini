@@ -21,7 +21,7 @@ const BeritaPopuler = () => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col text-black">
             <div className="flex flex-row">
                 <div className="w-1 h-[34px] bg-[#0090FF] ml-[72px] mr-[20px]"></div>
                 <h1 className="text-2xl font-bold mb-[32px]">
@@ -31,21 +31,26 @@ const BeritaPopuler = () => {
 
             {/* Card */}
             <div className="flex flex-row mx-[72px] justify-between">
-                {listNews.map((news) => (
-                    <div className="flex flex-row w-[400px] h-[128px] px-[26px]">
+                {listNews.map((news, index) => (
+                    <>
+                        <div className="flex flex-row w-[400px] h-[128px] px-[26px]">
                         <img 
                             src={news.thumbnail}
                             className="w-[147px] h-[128px] rounded-md object-cover"
                         />
                         <div className="flex flex-col pl-4 justify-between">
-                            <h1 className="font-bold text-base">
+                            <h1 className="font-semibold text-base">
                                 {news.title}
                             </h1>
-                            <h1 className="font-medium text-base">
+                            <h1 className="font-medium text-sm">
                                 {formatDate(news.pubDate)}
                             </h1>
                         </div>
                     </div>
+                        {index !== listNews.length - 1 && (
+                            <div className="w-[2px] h-[128px] bg-[#E0E0E0]"></div>
+                        )}
+                    </>
                 ))}
             </div>
         </div>
