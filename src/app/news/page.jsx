@@ -1,6 +1,6 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import React from 'react';
 
 const NewsPage = () => {
@@ -41,6 +41,7 @@ const NewsPage = () => {
     }
 
     return (
+        <Suspense fallback={<div>Loading...</div>}>
         <div className='flex flex-row bg-white text-black px-[72px] pt-[72px] justify-between'>
             <div className='flex flex-col w-[855px]'>
                 <h1 className='font-semibold text-4xl'>
@@ -149,6 +150,7 @@ const NewsPage = () => {
                 </div>
         </div>    
     </div>
+    </Suspense>
     );
 };
 
