@@ -1,5 +1,8 @@
 # Preview
 Web berita yang dibuat menggunakan React, dan menggunakan data dari API berita indonesia untuk content nya
+
+## Link (Desktop Only) : https://berita-kini.vercel.app/
+
 ## Headline
 ![alt text](public/images/Headline.png)
 
